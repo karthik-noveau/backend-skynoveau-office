@@ -4,6 +4,8 @@ const cors = require("cors")
 const bodyParser = require('body-parser');
 
 const app = express();
+const port = process.env.PORT || 8080;
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -31,6 +33,6 @@ app.post('/feedback', async (req, res) => {
   }
 });
 
-app.listen(8080, () => {
+app.listen(port, () => {
   console.log('Server listening on port 8080');
 });
