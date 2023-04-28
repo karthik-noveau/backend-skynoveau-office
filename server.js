@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const url = 'mongodb+srv://karthik:9HKqbiyvS4yUCnm2@cluster0.gwt9dpe.mongodb.net/SkynoveaDatabase?retryWrites=true&w=majority';
+const url = process.env.MONGO_URL;
 const dbName = 'SkynoveaDatabase';
 
 const  connectToDatabase = async()=> {
